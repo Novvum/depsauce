@@ -21,7 +21,7 @@ manifest:
   background_color: '#f7f7f7'
   theme_color: '#10506D'
   display: 'minimal-ui'
-  icon: 'src/favicon.png'
+  icon: 'static/images/depsauce.png'
 
 analytics:
   googleTrackingId: ''

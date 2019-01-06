@@ -14,7 +14,7 @@ class IndexPage extends React.PureComponent<{}, {}> {
             <p>Welcome to your new Gatsby site.</p>
             <p>Now go build something great.</p>
 
-            <figure>
+            <figure style={{ maxWidth: '200px' }}>
               <Image />
             </figure>
             <Link to="/page-2/">Go to page 2</Link>

@@ -66,7 +66,7 @@ const Brand = styled(Link)`
 `;
 
 const BrandIcon = styled.img`
-  height: 1.55rem;
+  height: 2rem;
   object-fit: contain;
   margin: 0;
 `;
@@ -185,11 +185,10 @@ class Header extends React.PureComponent<HeaderProps, HeaderState> {
                 <Toolbar>
                   <Brand to="/" aria-label="DepSauce Homepage">
                     <BrandIcon
-                      src={'/src/favicon.png'}
+                      src={'/images/depsauce.png'}
                       alt="Gatsby Logo"
                       aria-hidden="true"
                     />
-                    <span>{title}</span>
                   </Brand>
                   <MenuButton onClick={this.toggleMenu}>
                     <FontAwesomeIcon icon={open ? faTimes : faBars} />
