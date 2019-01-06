@@ -8,6 +8,17 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        // This type will contain remote schema Query type
+        typeName: 'LIB',
+        // This is field under which it's accessible
+        fieldName: 'lib',
+        // Url to query from
+        url: 'https://librariesio-graphql.now.sh',
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
