@@ -21,7 +21,7 @@ manifest:
   background_color: '#f7f7f7'
   theme_color: '#10506D'
   display: 'minimal-ui'
-  icon: 'src/images/gatsby-icon.png'
+  icon: 'src/favicon.png'
 
 analytics:
   googleTrackingId: ''

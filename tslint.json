@@ -1,6 +1,6 @@
 {
   "rulesDirectory": ["tslint-plugin-prettier"],
-  "extends": ["tslint-config-prettier", "tslint-react", "tslint-config-airbnb"],
+  "extends": ["tslint-config-prettier", "tslint-react"],
   "rules": {
     "prettier": true,
     "jsx-no-multiline-js": false,
