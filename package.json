@@ -1,17 +1,14 @@
 {
-  "name": "gatsby-typescript-boilerplate",
-  "description": "Gatsby Typescript boilerplate",
+  "name": "depsauce",
+  "description": "An open source dependency discovery tool by Novvum",
   "version": "0.0.1",
+  "author": "rajinwonderland",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "npm run develop"
+    "start": "yarn develop"
   },
-  "browserslist": [
-    "defaults",
-    "ie >=9"
-  ],
   "dependencies": {
     "gatsby": "^2.0.45",
     "gatsby-image": "^2.0.20",
