@@ -1,17 +1,34 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import { ThemeProvider, theme as styledTheme, styled } from '../styled';
 import Header from '../components/Header';
 
+const Content = styled.div`
+  height: 100%;
+  width: 100%;
+  .tp {
+    padding-top: 1rem;
+  }
+  .wp {
+    padding: 1rem 2.5rem 1rem 2.5rem;
+  }
+`;
+
+const Wrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;
 interface LayoutProps {
-  className?: string;
-  children: JSX.Element[];
+  children: any;
 }
 
 interface StaticQueryProps {
   site: {
     siteMetadata: {
       title: string;
+      description: string;
+      keywords: string[];
     };
   };
 }
@@ -21,10 +38,12 @@ class Layout extends React.Component<LayoutProps, {}> {
     return (
       <StaticQuery
         query={graphql`
-          query SiteTitleQuery {
+          query SiteMetaDataQuery {
             site {
               siteMetadata {
                 title
+                description
+                keywords
               }
             }
           }
@@ -34,32 +53,25 @@ class Layout extends React.Component<LayoutProps, {}> {
           const { children } = this.props;
 
           return (
-            <>
+            <Wrapper>
               <Helmet
                 title={siteMetadata.title}
                 meta={[
                   {
                     name: 'description',
-                    content:
-                      'An open source dependency discovery tool by Novvum',
+                    content: siteMetadata.description,
                   },
-                  { name: 'keywords', content: 'Gatsby, TypeScript, Starter' },
+                  {
+                    name: 'keywords',
+                    content: siteMetadata.keywords,
+                  },
                 ]}
               >
                 <html lang="en" />
               </Helmet>
               <Header siteTitle={siteMetadata.title} />
-              <div
-                style={{
-                  margin: '0 auto',
-                  maxWidth: 960,
-                  padding: '0px 1.0875rem 1.45rem',
-                  paddingTop: 0,
-                }}
-              >
-                {children}
-              </div>
-            </>
+              <Content>{children}</Content>
+            </Wrapper>
           );
         }}
       />
@@ -67,4 +79,10 @@ class Layout extends React.Component<LayoutProps, {}> {
   }
 }
 
-export default Layout;
+const WithTheme: React.SFC<LayoutProps> = ({ children }) => (
+  <ThemeProvider theme={styledTheme}>
+    <Layout>{children}</Layout>
+  </ThemeProvider>
+);
+
+export default WithTheme;
