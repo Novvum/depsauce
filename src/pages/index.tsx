@@ -1,23 +1,28 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Layout from '../layout';
 import Image from '../components/Image';
 import { Container } from '../components/Container';
 
-class IndexPage extends React.PureComponent<{}, {}> {
+interface IndexPageProps {
+  data: any;
+}
+
+class IndexPage extends React.Component<IndexPageProps, {}> {
+  fetchSuggestions = (value: string) => {};
   public render() {
     return (
       <Layout>
         <div className="wp">
           <Container>
-            <h1>Hi people</h1>
-            <p>Welcome to your new Gatsby site.</p>
-            <p>Now go build something great.</p>
-
             <figure style={{ maxWidth: '200px' }}>
               <Image />
             </figure>
+
             <Link to="/page-2/">Go to page 2</Link>
+            <h1>Hi people</h1>
+            <p>Welcome to your new Gatsby site.</p>
+            <p>Now go build something great.</p>
           </Container>
         </div>
       </Layout>

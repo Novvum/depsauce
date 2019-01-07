@@ -7,11 +7,8 @@ siteMetadata:
         title: 'Home'
         path: '/'
     - link:
-        title: 'About'
-        path: '/about'
-    - link:
-        title: 'Work'
-        path: '/work'
+        title: 'Project'
+        path: '/project'
 
 manifest:
   name: 'DepSauce'

@@ -11,7 +11,7 @@ const Content = styled.div`
     padding-top: 1rem;
   }
   .wp {
-    padding: 1rem 2.5rem 1rem 2.5rem;
+    padding: 5rem 2.5rem 1rem 2.5rem;
   }
 `;
 
