@@ -38,3 +38,7 @@ This project is still a **WIP**!!
 
 - [typescript-styled-plugin](https://www.npmjs.com/package/typescript-styled-plugin)
 - [Prettier](https://www.npmjs.com/package/prettier)
+
+
+---
+<p align="center">Made by <a href="https://www.novvum.io">Novvum</a> ❤️</p>
