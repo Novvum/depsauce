@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import Layout from '../layout';
 import Image from '../components/Image';
 import { Container } from '../components/Container';
@@ -9,7 +9,7 @@ interface IndexPageProps {
 }
 
 class IndexPage extends React.Component<IndexPageProps, {}> {
-  fetchSuggestions = (value: string) => {};
+  // fetchSuggestions = (value: string) => {};
   public render() {
     return (
       <Layout>
@@ -18,8 +18,7 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
             <figure style={{ maxWidth: '200px' }}>
               <Image />
             </figure>
-
-            <Link to="/page-2/">Go to page 2</Link>
+            <Link to="/test/">Go to Search</Link>
             <h1>Hi people</h1>
             <p>Welcome to your new Gatsby site.</p>
             <p>Now go build something great.</p>

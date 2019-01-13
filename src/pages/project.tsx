@@ -23,12 +23,12 @@ export default class Project extends React.Component<
     };
   }
   componentDidMount() {
-    const project = this.props.data.lib.getProject;
+    const project = this.props.data.depsauce.lib.getProject;
     const uri = `${project.repository_url.replace(
       'https://github.com',
       'https://raw.githubusercontent.com'
     )}/master/README.md`;
-    const readme = fetch(uri)
+    return fetch(uri)
       .then(res => res.text())
       .then(r =>
         this.setState({
@@ -38,7 +38,7 @@ export default class Project extends React.Component<
       .catch(err => console.error(err));
   }
   render() {
-    const project = this.props.data.lib.getProject;
+    const project = this.props.data.depsauce.lib.getProject;
     const { readme } = this.state;
     return (
       <Layout>
@@ -75,22 +75,24 @@ export default class Project extends React.Component<
 
 export const query = graphql`
   query TESTPROJECTTEMPLATE {
-    lib {
-      getProject(platform: npm, projectName: "graphql-playground") {
-        name
-        repository_url
-        platform
-        description
-        forks
-        rank
-        homepage
-        keywords
-        status
-        language
-        latest_release_number
-        dependents_count
-        dependent_repos_count
-        stars
+    depsauce {
+      lib {
+        getProject(platform: npm, projectName: "graphql") {
+          name
+          repository_url
+          platform
+          description
+          forks
+          rank
+          homepage
+          keywords
+          status
+          language
+          latest_release_number
+          dependents_count
+          dependent_repos_count
+          stars
+        }
       }
     }
   }

@@ -13,9 +13,9 @@ module.exports = {
         // This type will contain remote schema Query type
         typeName: 'LIB',
         // This is field under which it's accessible
-        fieldName: 'lib',
+        fieldName: 'depsauce',
         // Url to query from
-        url: 'https://librariesio-graphql.now.sh',
+        url: 'https://depsauce-graphql.now.sh',
       },
     },
     {

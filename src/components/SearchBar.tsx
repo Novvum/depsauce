@@ -3,22 +3,22 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/pro-regular-svg-icons';
 
-const SearchInput = styled('input')`
-  background: ${p => p.theme.editorColours.button};
-  border-radius: 4px;
-  color: ${p => p.theme.editorColours.navigationBarText};
-  border: 1px solid ${p => p.theme.editorColours.background};
+const SearchInput = styled.input`
+  background: transparent;
+  color: ${p => p.theme.editorColors.navigationBarText};
+  border: none;
   padding: 6px 12px;
   padding-left: 32px;
   font-size: 13px;
   flex: 1;
+  outline: none;
 `;
 
 export const Button = styled.button`
   text-transform: uppercase;
   font-weight: 600;
-  color: ${p => p.theme.editorColours.buttonText};
-  background: ${p => p.theme.editorColours.button};
+  color: ${p => p.theme.editorColors.buttonText};
+  background: ${p => p.theme.editorColors.button};
   border-radius: 2px;
   flex: 0 0 auto;
   letter-spacing: 0.53px;
@@ -32,21 +32,23 @@ export const Button = styled.button`
     margin-left: 0;
   }
   &:hover {
-    background-color: ${p => p.theme.editorColours.buttonHover};
+    background-color: ${p => p.theme.editorColors.buttonHover};
   }
 `;
 
 const SearchBarWrapper = styled.div`
   display: flex;
-  background: ${p => p.theme.editorColours.navigationBar};
+  color: ${p => p.theme.editorColors.navigationBarText};
+  background: ${p => p.theme.editorColors.navigationBar};
   padding: 10px 10px 4px;
+  border-radius: 4px;
   align-items: center;
 `;
 
 const Pulse = styled.div`
   width: 16px;
   height: 16px;
-  background-color: ${p => p.theme.editorColours.icon};
+  background-color: ${p => p.theme.editorColors.icon};
   border-radius: 100%;
 `;
 
@@ -68,7 +70,7 @@ interface SearchBarState {
 interface SearchBarProps {
   suggestions?: string[];
   fetchSuggestions?: () => void;
-  handleSubmit: () => void;
+  handleSubmit: (values: any) => void;
 }
 export default class SearchBar extends React.Component<
   SearchBarProps,
@@ -86,11 +88,18 @@ export default class SearchBar extends React.Component<
     });
   };
 
+  handleSubmit = (event: any) => {
+    this.props.handleSubmit(this.state.query);
+    event.preventDefault();
+  };
+
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <SearchBarWrapper>
           <SearchInput
+            name="searchInput"
+            type="text"
             value={this.state.query}
             onChange={this.onChange}
             onBlur={this.props.fetchSuggestions}

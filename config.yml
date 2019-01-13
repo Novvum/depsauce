@@ -1,24 +1,27 @@
 siteMetadata:
-  title: 'DepSauce'
-  description: 'An open source dependency discovery tool by Novvum'
-  keywords: 'gatsby, gatsbyjs, starter, novvum, graphql, react'
+  title: "DepSauce"
+  description: "An open source dependency discovery tool by Novvum"
+  keywords: "gatsby, gatsbyjs, starter, novvum, graphql, react"
   links:
     - link:
-        title: 'Home'
-        path: '/'
+        title: "Home"
+        path: "/"
     - link:
-        title: 'Project'
-        path: '/project'
+        title: "Project"
+        path: "/project"
+    - link:
+        title: "Search"
+        path: "/search"
 
 manifest:
-  name: 'DepSauce'
-  short_name: 'DepSauce'
-  description: 'An open source dependency discovery tool by Novvum'
-  start_url: '/'
-  background_color: '#f7f7f7'
-  theme_color: '#10506D'
-  display: 'minimal-ui'
-  icon: 'static/images/depsauce.png'
+  name: "DepSauce"
+  short_name: "DepSauce"
+  description: "An open source dependency discovery tool by Novvum"
+  start_url: "/"
+  background_color: "#f7f7f7"
+  theme_color: "#10506D"
+  display: "minimal-ui"
+  icon: "static/images/depsauce.png"
 
 analytics:
-  googleTrackingId: ''
+  googleTrackingId: ""

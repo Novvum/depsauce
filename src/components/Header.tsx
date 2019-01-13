@@ -178,7 +178,7 @@ class Header extends React.PureComponent<HeaderProps, HeaderState> {
         render={data => {
           const { siteMetadata } = data.site;
           const links = siteMetadata.links;
-          const title = siteMetadata.title;
+
           return (
             <HeaderWrapper>
               <AppBar>
