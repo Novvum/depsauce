@@ -1,3 +1,5 @@
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+
 <p align="center"><img src="https://rawcdn.githack.com/Novvum/depsauce/f14786c39e6cb3bdeb00a54e51b55d86746a901b/static/images/depsauce.png" width="269"></p>
 <br/>
 <h1 align="center">Welcome to DepSauce</h1>
@@ -43,4 +45,3 @@ This project is still a **WIP**!!
 ---
 <p align="center">Made by <a href="https://www.novvum.io">Novvum</a> ❤️</p>
 
-[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
